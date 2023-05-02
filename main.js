@@ -84,17 +84,17 @@ function buscarServicio(servicios, nombre) {
 }
 
 function filtrarPorDuracion(servicios, duracionMinima, duracionMaxima) {
-  return servicios.filter(servicio => servicio.duracion >= duracionMinima && servicio.duracion <= duracionMaxima);
+  return servicios.filter(servicio => servicio.duracion >= duracionMinima && servicio.duracion <= duracionMaxima)
 }
 
 function filtrarPorPrecio(servicios, precioMaximo) {
-  return servicios.filter(servicio => servicio.precio <= precioMaximo);
+  return servicios.filter(servicio => servicio.precio <= precioMaximo)
 }
 
 
-const reservasBtn = document.getElementById('reservas-btn');
+const reservasBtn = document.getElementById('reservas-btn')
 
-reservasBtn.addEventListener('click', reservas);
+reservasBtn.addEventListener('click', reservas)
 
 function reservas() {
  
@@ -110,42 +110,42 @@ function reservas() {
   };
 
  
-  const reservasStorage = localStorage.getItem('reservas');
+  const reservasStorage = localStorage.getItem('reservas')
   let reservas = [];
   if (reservasStorage) {
-    reservas = JSON.parse(reservasStorage);
+    reservas = JSON.parse(reservasStorage)
   }
 
-  reservas.push(reserva);
+  reservas.push(reserva)
 
-  localStorage.setItem('reservas', JSON.stringify(reservas));
+  localStorage.setItem('reservas', JSON.stringify(reservas))
 
   
-  actualizarListaReservas(reservas);
+  actualizarListaReservas(reservas)
 }
 
 
 function actualizarListaReservas(reservas) {
-  const listaReservas = document.getElementById('lista-reservas');
+  const listaReservas = document.getElementById('lista-reservas')
 
   
-  listaReservas.innerHTML = '';
+  listaReservas.innerHTML = ''
 
   
   reservas.forEach(function(reserva) {
-    const itemReserva = document.createElement('li');
-    itemReserva.textContent = `Nombre: ${reserva.nombre}, Servicio: ${reserva.servicio}, Fecha: ${reserva.fecha}`;
+    const itemReserva = document.createElement('li')
+    itemReserva.textContent = `Nombre: ${reserva.nombre}, Servicio: ${reserva.servicio}, Fecha: ${reserva.fecha}`
     listaReservas.appendChild(itemReserva);
   });
 }
 
 
 window.addEventListener('load', function() {
-  const reservasStorage = localStorage.getItem('reservas');
-  let reservas = [];
+  const reservasStorage = localStorage.getItem('reservas')
+  let reservas = []
   if (reservasStorage) {
-    reservas = JSON.parse(reservasStorage);
+    reservas = JSON.parse(reservasStorage)
   }
-  actualizarListaReservas(reservas);
-});
+  actualizarListaReservas(reservas)
+})
 
