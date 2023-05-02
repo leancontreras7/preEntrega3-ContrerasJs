@@ -1,0 +1,94 @@
+@use '_commons' as c;
+
+
+nav{
+    background: #000;
+    height: 80px;
+    width: 100%;
+}
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+}
+.logo{
+    height: 40px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px; /*80px*/
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 18px;
+    padding: 7px 13px;  /*7px 13px*/
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover{
+    border-bottom: 3px solid rgb(85, 124, 85);
+    transition: 1s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;  /*80px*/
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+section{
+    background: url(fondo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
+}
+
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px; /*16px*/
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 0px;  /*30px  CAMBIAR ESTO*/
+    }
+    nav ul li a{
+        font-size: 15px; /*20px CAMBIAR ESTO*/
+    }
+    li a:hover, li a.active{
+        border-bottom: 3px solid rgb(85, 124, 85);
+        
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}

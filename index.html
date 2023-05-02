@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barberia</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <a href="inicio" class="enlace">
+                <p>BARBERIA</p>
+            </a>
+            <ul>
+                <li><a class="active" href="#">Productos</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Turnos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <h1>Formulario de Reserva</h1>
+
+    <form id="reserva-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required><br><br>
+    
+        <label for="servicio">Servicio:</label>
+        <select id="servicio" required>
+            <option value="">Seleccionar servicio</option>
+            <option value="Corte de pelo">Nutricion</option>
+            <option value="Coloración">Corte</option>
+            <option value="Peinado">Color</option>
+            <option value="Peinado">Alisado</option>
+        </select><br><br>
+    
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" required><br><br>
+    
+        <input type="button" value="Reservar" id="reservas-btn">
+    </form>
+
+    <h2>Reservas:</h2>
+    <ul id="lista-reservas"></ul>
+
+    
+    <footer>
+        <p>Curso de Javascript | Coderhouse </p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
